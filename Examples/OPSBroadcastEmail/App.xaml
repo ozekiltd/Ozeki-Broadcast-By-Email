@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             x:Class="OzDemoEmailSender.App" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:viewModel="clr-namespace:OzDemoEmailSender.ViewModel"
+             xmlns:views="clr-namespace:OzDemoEmailSender.View"
+             xmlns:taskbarNotification="clr-namespace:Hardcodet.Wpf.TaskbarNotification;assembly=Hardcodet.Wpf.TaskbarNotification"
+             mc:Ignorable="d">
+    <Application.Resources>
+        <ResourceDictionary>
+            <DataTemplate DataType="{x:Type viewModel:SettingsViewModel}">
+                <views:SettingsUC/>
+            </DataTemplate>
+            <Style x:Key="WindowIconStyle" TargetType="Window">
+                <Setter Property="Icon" Value="View\Resources\broadcast_email.ico"/>
+            </Style>
+
+            <Style x:Key="AppImageStyle" TargetType="Image">
+                <Setter Property="Source" Value="View\Resources\broadcast_email.ico"/>
+            </Style>
+
+            <Style x:Key="AppTaskbarIconStyle" TargetType="taskbarNotification:TaskbarIcon">
+                <Setter Property="IconSource" Value="View\Resources\broadcast_email.ico"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
